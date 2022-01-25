@@ -25,6 +25,7 @@ export class AppComponent {
   }
 
   onRemoveItemFromCart(cartItem: CartItem) {
+    cartItem.item.available += cartItem.quantity;
     this.cart = this.cart.filter(i => i.item.id != cartItem.item.id);
     console.log(this.cart);
   }
