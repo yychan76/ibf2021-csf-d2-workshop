@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row border border-info border-bottom-0 align-items-center">
+    <div class="col-2">
+      <img class="img-thumbnail" src={{cartItem.item.imagesrc}} width=60px alt={{cartItem.item.name}}>
+    </div>
+    <div class="col-2">
+      <p>{{cartItem.item.name}}</p>
+    </div>
+    <div class="col-3 d-flex justify-content-center">
+      <app-spinner [value]="cartItem.quantity" [max]="cartItem.item.available + cartItem.quantity" (valueChanged)="onValueChanged($event)"></app-spinner>
+    </div>
+    <div class="col-2 text-center">
+      <p>{{cartItem.quantity * cartItem.item.price | currency}}</p>
+    </div>
+    <div class="col-3">
+      <app-button [class]="btnClass" [text]="removeBtnText" (btnClick)="onButtonClick(cartItem)"></app-button>
+    </div>
+  </div>
+</div>

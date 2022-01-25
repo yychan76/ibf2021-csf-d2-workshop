@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>My Cart</h1>
+    </div>
+  </div>
+  <div *ngIf="cart.length > 0; else emptyCart">
+    <div class="row">
+      <div class="col-2 text-center">
+        <p>Image</p>
+      </div>
+      <div class="col-2">
+        <p>Product</p>
+      </div>
+      <div class="col-3 text-center">
+        <p>Quantity</p>
+      </div>
+      <div class="col-2 text-center">
+        <p>Price</p>
+      </div>
+      <div class="col-3">
+
+      </div>
+    </div>
+    <div class="row" *ngFor="let item of cart">
+      <div class="col">
+        <app-cart-item [cartItem]=item (removeBtnClick)="onRemoveButtonClick(item)"></app-cart-item>
+      </div>
+    </div>
+    <div class="row pt-3 border border-bottom-0 border-warning">
+      <div class="col-2">
+        <p></p>
+      </div>
+      <div class="col-2">
+        <p>Totals</p>
+      </div>
+      <div class="col-3 text-center">
+        <p>Quantity:</p>
+      </div>
+      <div class="col-2 text-center">
+        <p>Cost:</p>
+      </div>
+      <div class="col-3">
+        <p></p>
+      </div>
+    </div>
+    <div class="row pb-2 border border-top-0 border-warning">
+      <div class="col-2">
+        <p></p>
+      </div>
+      <div class="col-3">
+        <p></p>
+      </div>
+      <div class="col-2 text-center">
+        <p>{{ getCartTotalQuantity() }}</p>
+      </div>
+      <div class="col-2 text-center">
+        <p>{{ getCartTotalCost() | currency }}</p>
+      </div>
+      <div class="col-3">
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #emptyCart>Your cart is empty</ng-template>
+</div>
