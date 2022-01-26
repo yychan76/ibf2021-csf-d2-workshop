@@ -1,12 +1,12 @@
 <div class="input-group inline-group">
   <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary btn-minus" (click)="stepDown();onChange()" >
+    <button class="btn btn-outline-secondary btn-minus" (click)="stepDown();onChange()" title="Minus One">
       <fa-icon [icon]="faMinus"></fa-icon>
     </button>
   </div>
-  <input class="form-control" [min]="min" [max]="max ? max : null" name="value" [(ngModel)]="value" id="value" type="number" (keyup)="onChange()">
+  <input class="form-control" [min]="min" [max]="max ? max : null" name="value" [(ngModel)]="value" id="value" type="number" (keyup)="onChange()" title="Enter Amount">
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary btn-plus" (click)="stepUp();onChange()">
+    <button class="btn btn-outline-secondary btn-plus" (click)="stepUp();onChange()" title="Add One">
       <fa-icon [icon]="faPlus"></fa-icon>
     </button>
   </div>
