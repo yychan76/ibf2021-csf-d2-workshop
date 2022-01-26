@@ -9,8 +9,8 @@ import { CartItem } from 'src/app/CartItem';
 export class CartItemComponent implements OnInit {
   @Input() cartItem!: CartItem;
   @Output() removeBtnClick: EventEmitter<CartItem> = new EventEmitter();
-  removeBtnText: string = 'Remove';
-  btnClass = "btn btn-danger";
+  removeBtnText: string = '-';
+  btnClass = "btn btn-danger align-middle rounded-circle";
 
   constructor() { }
 

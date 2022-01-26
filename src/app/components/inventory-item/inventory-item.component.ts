@@ -10,8 +10,8 @@ import { Product } from '../../Product';
 export class InventoryItemComponent implements OnInit {
   @Input() item!: Product;
   @Output() addBtnClick: EventEmitter<Product> = new EventEmitter();
-  addBtnText = 'Add';
-  btnClass = "btn btn-primary";
+  addBtnText = '+';
+  btnClass = "btn btn-primary align-middle rounded-circle";
 
   constructor() { }
 

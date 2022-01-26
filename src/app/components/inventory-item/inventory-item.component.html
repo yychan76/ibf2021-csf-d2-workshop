@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row mb-1 border rounded align-items-center">
-    <div class="col-2">
+    <div class="col-2 text-center">
       <img class="img-thumbnail" src={{item.imagesrc}} width=60px alt={{item.name}}>
     </div>
     <div class="col-4">
@@ -13,7 +13,7 @@
       <p>{{item.price | currency}}</p>
     </div>
     <div class="col-2">
-      <app-button [class]="btnClass" [text]="addBtnText" (btnClick)="onButtonClick(item)"></app-button>
+      <app-button [class]="btnClass" [text]="addBtnText" (btnClick)="onButtonClick(item)" title="Add to cart"></app-button>
     </div>
   </div>
 </div>

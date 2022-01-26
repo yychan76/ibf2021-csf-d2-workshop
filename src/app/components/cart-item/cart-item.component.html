@@ -3,7 +3,7 @@
     <div class="col-2">
       <img class="img-thumbnail" src={{cartItem.item.imagesrc}} width=60px alt={{cartItem.item.name}}>
     </div>
-    <div class="col-2">
+    <div class="col-3">
       <p>{{cartItem.item.name}}</p>
     </div>
     <div class="col-3 d-flex justify-content-center">
@@ -12,8 +12,8 @@
     <div class="col-2 text-center">
       <p>{{cartItem.quantity * cartItem.item.price | currency}}</p>
     </div>
-    <div class="col-3">
-      <app-button [class]="btnClass" [text]="removeBtnText" (btnClick)="onButtonClick(cartItem)"></app-button>
+    <div class="col-1">
+      <app-button [class]="btnClass" [text]="removeBtnText" (btnClick)="onButtonClick(cartItem)" title="Remove item from cart"></app-button>
     </div>
   </div>
 </div>
